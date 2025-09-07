@@ -1,0 +1,9 @@
+let rec reverse =
+  (fun lst ->
+    (
+      fun acc ->
+        (match lst with 
+        | [] -> acc
+        | x::xs -> reverse xs (x::acc)
+    )))
+      in reverse [1;2;3] []

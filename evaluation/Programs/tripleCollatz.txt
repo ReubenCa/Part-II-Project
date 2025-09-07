@@ -1,0 +1,27 @@
+let rec sum = fun j ->
+  let rec collatzCubed = fun k ->
+    let rec collatzSquared = fun m ->
+    let rec collatz = fun n ->
+      if (==) n 1 then 1 else
+      if (mod) n 2 == 0 then 
+          (+) 1 (collatz ((/) n 2))
+      else
+          (+) 1 (collatz ((+) (( *) n 3) 1))
+    in 
+      if (==) m 1 then 1 else
+      if (mod) m 2 == 0 then 
+          (+) (collatz m) (collatzSquared ((/) m 2))
+      else
+          (+) (collatz m) (collatzSquared ((+) (( *) m 3) 1))
+    in 
+      if (==) k 1 then 1 else
+      if (mod) k 2 == 0 then 
+          (+) (collatzSquared k) (collatzCubed ((/) k 2))
+      else
+          (+) (collatzSquared k) (collatzCubed ((+) (( *) k 3) 1))
+    in
+    if (==) j 1 then 1 else
+      (mod) ((+) (collatzCubed j) (sum ((-) j 1))) 100000
+  in
+  sum 
+  

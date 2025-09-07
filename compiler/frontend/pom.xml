@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.carolang</groupId>
+    <artifactId>compiler</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <groupId>com.carolang</groupId>
+  <artifactId>frontend</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.antlr</groupId>
+        <artifactId>antlr4-maven-plugin</artifactId>
+        <version>4.11.1</version>
+        <executions>
+          <execution>
+            <id>antlr</id>
+            <goals>
+              <goal>antlr4</goal>
+            </goals>
+            <configuration>
+              <visitor>true</visitor>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.antlr</groupId>
+      <artifactId>antlr4</artifactId>
+      <version>4.11.1</version>
+    </dependency>
+  </dependencies>
+</project>

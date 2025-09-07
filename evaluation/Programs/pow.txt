@@ -1,0 +1,1 @@
+let rec pow =(fun man -> (fun exp ->  if (==) man 0 then 1 else (( * ) exp (pow ((-) man 1) exp) ))) in pow 30 2;;

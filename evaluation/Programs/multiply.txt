@@ -1,0 +1,1 @@
+let rec mult =(fun man -> (fun exp ->  if (==) man 0 then 0 else (( + ) exp (mult ((-) man 1) exp) ))) in mult 30 2

@@ -1,0 +1,9 @@
+let max = 100 in
+let rec ack = 
+  fun m ->
+    fun n ->
+      if (==) m 0 then (+) n 1 else
+      if (==) n 0 then ack ((-) m 1) 1 else
+      (mod) (ack ((-) m 1) ((mod) (ack m ((-) n 1)) max)) max
+in
+ack 1 1

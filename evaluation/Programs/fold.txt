@@ -1,0 +1,5 @@
+let rec fold  = fun f-> (fun lis ->
+  match lis with
+  | [] -> 0
+  | x::xs -> f x (fold f xs))
+in fold (+) [1;2;3;4;5;6;7;8]

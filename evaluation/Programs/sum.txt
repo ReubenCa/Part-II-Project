@@ -1,0 +1,10 @@
+let rec sum =
+fun a -> (
+    fun b -> (
+    if (==) a b then a
+    else
+        let mid = (/) ((+) a b) 2 in
+        (+) (sum a mid) (sum ((+) mid 1) b)
+    )
+)
+in sum 1 100

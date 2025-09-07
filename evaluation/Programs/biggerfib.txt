@@ -1,0 +1,5 @@
+let rec biggerfib = 
+  (fun n -> 
+  if (<=) n 2 then 1 else
+  (+) ((+) (biggerfib ((-) n 1)) (biggerfib ((-) n 2))) (biggerfib ((-) n 3))
+  ) in biggerfib
